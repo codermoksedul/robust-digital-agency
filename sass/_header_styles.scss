@@ -1,0 +1,123 @@
+#dm_header_area {
+  height: 90px;
+  box-shadow: 0 0 10px #0000001f;
+  border-bottom: 1px solid #0000001f;
+  .dm_logo {
+    max-width: 200px;
+  }
+  .dm_navbar_area {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+      gap: 40px;
+      li {
+        position: relative;
+        a {
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 500;
+          display: block;
+          color: #000;
+          transition: all 0.5s;
+          &:hover {
+            color: red;
+          }
+        }
+        i {
+          font-size: 13px;
+        }
+        ul {
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0px;
+          background-color: #fffefe;
+          min-width: 200px;
+          justify-content: start !important;
+          align-items: start;
+          gap: 0px;
+          box-shadow: 0 0 10px #0000001f;
+          border-radius: 2px;
+          transition: all 0.5s;
+          transform-origin: top;
+          transform: translateY(50px);
+          opacity: 0;
+          pointer-events: none;
+          li {
+            width: 100%;
+            a {
+              display: block;
+              width: 100%;
+              padding: 10px 20px;
+              border-bottom: 1px solid #00000013;
+              transition: all 0.5s;
+              &:hover {
+                background-color: red;
+                color: #fff;
+              }
+            }
+          }
+        }
+        &:hover {
+          ul {
+            transform: translateY(0px);
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+      }
+
+      .current_page_item {
+        a {
+          color: red;
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  #dm_nav_toggler {
+    display: none;
+    border: none;
+    font-size: 27px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #dm_nav_toggler {
+    display: block !important;
+  }
+  #dm_header_area {
+    .dm_navbar_area {
+      z-index: 99;
+      display: block;
+      position: fixed;
+      background-color: #fff;
+      width: 100%;
+      max-width: 300px;
+      left: -400px;
+      top: 0px;
+      box-shadow: 0 0 10px #0000003f;
+      min-height: 100vh;
+      transition: all 0.5s;
+
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+}
